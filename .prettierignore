@@ -7,3 +7,7 @@ bun.lockb
 
 # Miscellaneous
 /static/
+
+# Generated: shadcn-svelte CLI output and inlang project metadata
+/src/lib/components/ui/
+/project.inlang/
