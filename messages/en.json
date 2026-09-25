@@ -1,4 +1,351 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from en!"
+	"app_title": "Dye & Stained Glass Optimizer",
+	"app_tagline": "Turn your Minecraft dye into as many stained-glass colors as possible, with counts as even as possible.",
+	"app_meta_description": "Plan the mathematically optimal way to craft Minecraft dyes and stained glass from your inventory.",
+	"app_footer": "Runs entirely in your browser. Recipe data: {version}.",
+	"locale_label": "Language",
+	"locale_en": "English",
+	"locale_es": "Español",
+	"theme_toggle": "Toggle dark mode",
+	"color_white": "White",
+	"color_orange": "Orange",
+	"color_magenta": "Magenta",
+	"color_light_blue": "Light Blue",
+	"color_yellow": "Yellow",
+	"color_lime": "Lime",
+	"color_pink": "Pink",
+	"color_gray": "Gray",
+	"color_light_gray": "Light Gray",
+	"color_cyan": "Cyan",
+	"color_purple": "Purple",
+	"color_blue": "Blue",
+	"color_brown": "Brown",
+	"color_green": "Green",
+	"color_red": "Red",
+	"color_black": "Black",
+	"dye_white": "White Dye",
+	"dye_orange": "Orange Dye",
+	"dye_magenta": "Magenta Dye",
+	"dye_light_blue": "Light Blue Dye",
+	"dye_yellow": "Yellow Dye",
+	"dye_lime": "Lime Dye",
+	"dye_pink": "Pink Dye",
+	"dye_gray": "Gray Dye",
+	"dye_light_gray": "Light Gray Dye",
+	"dye_cyan": "Cyan Dye",
+	"dye_purple": "Purple Dye",
+	"dye_blue": "Blue Dye",
+	"dye_brown": "Brown Dye",
+	"dye_green": "Green Dye",
+	"dye_red": "Red Dye",
+	"dye_black": "Black Dye",
+	"glass_white": "White Stained Glass",
+	"glass_orange": "Orange Stained Glass",
+	"glass_magenta": "Magenta Stained Glass",
+	"glass_light_blue": "Light Blue Stained Glass",
+	"glass_yellow": "Yellow Stained Glass",
+	"glass_lime": "Lime Stained Glass",
+	"glass_pink": "Pink Stained Glass",
+	"glass_gray": "Gray Stained Glass",
+	"glass_light_gray": "Light Gray Stained Glass",
+	"glass_cyan": "Cyan Stained Glass",
+	"glass_purple": "Purple Stained Glass",
+	"glass_blue": "Blue Stained Glass",
+	"glass_brown": "Brown Stained Glass",
+	"glass_green": "Green Stained Glass",
+	"glass_red": "Red Stained Glass",
+	"glass_black": "Black Stained Glass",
+	"resource_plain_glass": "Plain Glass",
+	"unit_dye_units": [
+		{
+			"declarations": [
+				"input count",
+				"input countText",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{countText} dye unit",
+				"countPlural=*": "{countText} dye units"
+			}
+		}
+	],
+	"unit_stained_glass_blocks": [
+		{
+			"declarations": [
+				"input count",
+				"input countText",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{countText} stained-glass block",
+				"countPlural=*": "{countText} stained-glass blocks"
+			}
+		}
+	],
+	"unit_plain_glass_blocks": [
+		{
+			"declarations": [
+				"input count",
+				"input countText",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{countText} plain glass block",
+				"countPlural=*": "{countText} plain glass blocks"
+			}
+		}
+	],
+	"unit_recipe_executions": [
+		{
+			"declarations": [
+				"input count",
+				"input countText",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{countText} recipe execution",
+				"countPlural=*": "{countText} recipe executions"
+			}
+		}
+	],
+	"unit_dye_of_color": [
+		{
+			"declarations": [
+				"input count",
+				"input countText",
+				"input dye",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{countText} {dye}",
+				"countPlural=*": "{countText} {dye}"
+			}
+		}
+	],
+	"stacks_exact": [
+		{
+			"declarations": [
+				"input stacks",
+				"input stacksText",
+				"local stacksPlural = stacks: plural"
+			],
+			"selectors": [
+				"stacksPlural"
+			],
+			"match": {
+				"stacksPlural=one": "{stacksText} stack",
+				"stacksPlural=*": "{stacksText} stacks"
+			}
+		}
+	],
+	"stacks_with_remainder": [
+		{
+			"declarations": [
+				"input stacks",
+				"input stacksText",
+				"input remainderText",
+				"local stacksPlural = stacks: plural"
+			],
+			"selectors": [
+				"stacksPlural"
+			],
+			"match": {
+				"stacksPlural=one": "{stacksText} stack + {remainderText}",
+				"stacksPlural=*": "{stacksText} stacks + {remainderText}"
+			}
+		}
+	],
+	"count_with_stacks": "{amount} · {stacks}",
+	"unit_short_dye": "dye units",
+	"unit_short_stained_glass": "stained-glass blocks",
+	"unit_short_plain_glass": "plain glass blocks",
+	"unit_short_executions": "recipe executions",
+	"section_inventory": "Starting Inventory",
+	"section_inventory_description": "The dye units and stained-glass blocks you already have.",
+	"section_options": "Options",
+	"section_craft": "Craft These Dyes",
+	"section_craft_description": "Recipe executions, in an order where every input is ready before it’s needed.",
+	"section_glass": "Make This Glass",
+	"section_glass_description": "Each glass dyeing uses 1 dye unit and 8 plain glass blocks, and gives 8 stained-glass blocks.",
+	"section_final": "Final Inventory",
+	"section_final_description": "Stained-glass blocks per color after the plan.",
+	"section_leftovers": "Leftovers",
+	"section_leftovers_description": "Dye units left after the plan.",
+	"section_bottleneck": "Bottleneck",
+	"section_bottleneck_description": "Why can’t I get more?",
+	"section_target": "Target",
+	"inventory_dye_label": "Dye units",
+	"inventory_glass_label": "Stained-glass blocks",
+	"inventory_field_aria": "{color}: {field}",
+	"inventory_keyboard_hint": "Tab moves between fields. ↑/↓ step by 1, Shift+↑/↓ by 64, Enter applies.",
+	"stepper_increase": "Add 1 to {field}",
+	"stepper_decrease": "Subtract 1 from {field}",
+	"stepper_zero": "Set {field} to 0",
+	"input_error_empty": "Enter a number, or 0 if you have none.",
+	"input_error_negative": "Enter 0 or more. Negative amounts aren’t possible.",
+	"input_error_integer": "Enter a whole number, like 12. Items can’t be split.",
+	"input_error_too_large": "Enter at most {max}.",
+	"input_error_minimum": "Enter at least {min}.",
+	"plain_glass_label": "Plain glass",
+	"plain_glass_unlimited": "Unlimited plain glass",
+	"plain_glass_unlimited_hint": "Turn off to enter how many plain glass blocks you have.",
+	"plain_glass_quantity": "Plain glass blocks available",
+	"mode_label": "Optimize for",
+	"mode_balanced": "Balanced",
+	"mode_balanced_description": "Most colors first, then the most even counts.",
+	"mode_maximum_output": "Maximum output",
+	"mode_maximum_output_description": "The most stained-glass blocks, balance aside.",
+	"mode_target": "Target",
+	"mode_target_description": "Reach a set count in the colors you pick.",
+	"target_label": "Target per color (stained-glass blocks)",
+	"target_colors_label": "Colors the target applies to",
+	"target_select_all": "Select all",
+	"target_select_none": "Clear",
+	"target_error_no_colors": "Pick at least one color.",
+	"action_load_sample": "Load sample",
+	"action_reset": "Reset",
+	"action_export": "Export JSON",
+	"action_import": "Import JSON",
+	"action_cancel": "Cancel",
+	"action_close": "Close",
+	"action_details": "Details",
+	"confirm_sample_title": "Replace your inventory with the sample?",
+	"confirm_sample_description": "Your current dye units, stained-glass blocks and plain glass setting will be overwritten.",
+	"confirm_sample_action": "Load sample",
+	"confirm_reset_title": "Reset everything?",
+	"confirm_reset_description": "Every count goes back to 0 and the options go back to their defaults.",
+	"confirm_reset_action": "Reset",
+	"toast_sample_loaded": "Sample inventory loaded.",
+	"toast_reset": "Inventory and options reset.",
+	"toast_exported": "Inventory exported.",
+	"toast_imported": "Inventory imported.",
+	"toast_import_failed": "Couldn’t import that file. Nothing was changed.",
+	"import_more_errors": [
+		{
+			"declarations": [
+				"input count",
+				"input countText",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "…and {countText} more problem.",
+				"countPlural=*": "…and {countText} more problems."
+			}
+		}
+	],
+	"import_error_json": "The file isn’t valid JSON.",
+	"import_error_shape": "The file isn’t a Dye Optimizer export.",
+	"import_error_schema_version": "Schema version {version} isn’t supported (expected {expected}).",
+	"import_error_recipe_version": "Recipe data version “{version}” isn’t supported (expected “{expected}”).",
+	"import_error_unknown_color": "Unknown color “{color}” in {path}.",
+	"import_error_count": "{path} must be a whole number from 0 to {max} (found {value}).",
+	"import_error_missing": "{path} is missing.",
+	"import_error_invalid": "{path} has an invalid value ({value}).",
+	"results_solving": "Optimizing…",
+	"results_stale": "Updating for your latest changes…",
+	"results_error_title": "The optimizer couldn’t produce a result",
+	"results_error_validation": "The solver’s answer failed the integer checks, so it isn’t shown. Change the inventory or try again.",
+	"results_error_solver": "The solver stopped unexpectedly: {message}",
+	"results_error_load": "The solver couldn’t be loaded. Check your connection and reload the page.",
+	"results_invalid_input": "Fix the highlighted fields to see a result.",
+	"results_empty_title": "Nothing to optimize yet",
+	"results_empty_description": "Enter your dye units or stained-glass blocks, or load the sample inventory.",
+	"results_retry": "Try again",
+	"headline_colors": "{achieved} / {total} colors",
+	"headline_label": "Result summary",
+	"metric_colors": "Colors",
+	"metric_balance_floor": "Balance floor",
+	"metric_balance_floor_hint": "Smallest final count among your colors",
+	"metric_largest": "Largest count",
+	"metric_spread": "Spread",
+	"metric_spread_hint": "Largest count minus the balance floor",
+	"metric_new_glass": "New stained-glass blocks",
+	"metric_total_glass": "Total stained-glass blocks",
+	"metric_plain_glass": "Plain glass needed",
+	"metric_dye_used": "Dye units on glass",
+	"metric_not_applicable": "n/a",
+	"table_color": "Color",
+	"table_existing": "Existing glass",
+	"table_dye_on_glass": "Dye units on glass",
+	"table_new": "New glass",
+	"table_final": "Final glass",
+	"table_stacks": "Stacks + remainder",
+	"table_total": "Total",
+	"table_hide_empty": "Only colors in the final inventory are listed.",
+	"plan_recipe_step": "{executions}× {recipe}",
+	"plan_recipe_io": "{inputs} → {outputs}",
+	"plan_list_separator": " + ",
+	"plan_glass_step": "Use {dye} on {plainGlass} → {result}",
+	"plan_no_recipes": "No dye crafting needed: every color is dyed from dye you already have.",
+	"plan_no_glass": "No glass dyeing in this plan.",
+	"plan_total_executions": "Total: {executions}",
+	"recipe_dialog_per_execution": "Each recipe execution",
+	"recipe_dialog_total": "All executions together",
+	"recipe_dialog_source": "Verified against the vanilla recipe file",
+	"recipe_dialog_recipe_version": "Recipe data: {version}",
+	"recipe_dialog_open": "Show recipe details for {recipe}",
+	"recipe_cyan_dye": "Cyan Dye (Blue + Green)",
+	"recipe_gray_dye": "Gray Dye (Black + White)",
+	"recipe_light_blue_dye_from_blue_white_dye": "Light Blue Dye (Blue + White)",
+	"recipe_light_gray_dye_from_black_white_dye": "Light Gray Dye (Black + 2 White)",
+	"recipe_light_gray_dye_from_gray_white_dye": "Light Gray Dye (Gray + White)",
+	"recipe_lime_dye": "Lime Dye (Green + White)",
+	"recipe_magenta_dye_from_blue_red_pink": "Magenta Dye (Blue + Red + Pink)",
+	"recipe_magenta_dye_from_blue_red_white_dye": "Magenta Dye (Blue + 2 Red + White)",
+	"recipe_magenta_dye_from_purple_and_pink": "Magenta Dye (Purple + Pink)",
+	"recipe_orange_dye_from_red_yellow": "Orange Dye (Red + Yellow)",
+	"recipe_pink_dye_from_red_white_dye": "Pink Dye (Red + White)",
+	"recipe_purple_dye": "Purple Dye (Blue + Red)",
+	"leftovers_none": "No dye left over.",
+	"leftovers_why": "Why leave leftovers?",
+	"leftovers_dialog_title": "Why the plan leaves dye unused",
+	"leftovers_intro_balanced": "Large leftovers can be intentional. The Balanced optimizer only spends dye when it keeps your colors even: spending hundreds of extra dye units on one color would make that color huge and ruin the balance.",
+	"leftovers_intro_maximum": "Maximum output spends every dye unit it can. Anything left over couldn’t be used, usually because plain glass ran out.",
+	"leftovers_intro_target": "Target mode only spends the dye your targets need, so the rest stays in your inventory.",
+	"leftovers_note_spread": "{dye}: one more dye unit on glass would give {next} instead of {current}, above the largest count ({largest}), so the spread would grow.",
+	"leftovers_note_other": "{dye}: using it wouldn’t add a color, raise the balance floor or reduce the spread.",
+	"bottleneck_none": "Add some dye units or stained-glass blocks first.",
+	"bottleneck_unique_heading": "Limiting resource",
+	"bottleneck_heading": "One smallest resource increase that would improve the result",
+	"bottleneck_available": "{amount} available",
+	"bottleneck_required": "{amount} required to raise every color above the current balance floor",
+	"bottleneck_short": "You are {amount} short.",
+	"bottleneck_unique": "This is the only smallest increase (proven by re-solving without it).",
+	"bottleneck_not_unique": "It isn’t the only option. These work just as well:",
+	"bottleneck_next_floor": "With it, the balance floor could rise from {current} to at least {next}.",
+	"bottleneck_show_math": "Show the math",
+	"bottleneck_dialog_title": "Why the balance floor stops at {floor}",
+	"bottleneck_dialog_intro": "To raise the balance floor, every color in your final inventory needs at least {next} blocks. Glass comes 8 blocks per dye unit (S = E + 8·G), so a color’s next reachable count can be well above {next}.",
+	"bottleneck_level_line": "{color}: {current} now → {next} next, needs {dye} on glass",
+	"bottleneck_dialog_conclusion": "With your current inventory that next level is infeasible. The smallest extra starting resources that make it feasible are:",
+	"bottleneck_increase_line": "+{extra} {resource} ({available} → {required})",
+	"unreachable_title": "Colors you can’t make",
+	"unreachable_description": "You have no dye units or stained-glass blocks of these, and no recipe can make the dye from what you have.",
+	"unreachable_recipe_missing": "{recipe} needs {missing}.",
+	"unreachable_no_recipe": "No dye-mixing recipe makes it.",
+	"target_met_title": "At the target",
+	"target_unmet_title": "Below the target",
+	"target_all_met": "Every requested color reaches {target}.",
+	"target_unmet_unreachable": "{color}: you have none and no recipe can make it from what you have.",
+	"target_unmet_short": "{color}: {current}, {shortfall} short. Your resources run out before it gets there.",
+	"target_increase_heading": "One smallest resource increase that would meet every target"
 }

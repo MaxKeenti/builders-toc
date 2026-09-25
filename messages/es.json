@@ -1,4 +1,351 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from es!"
+	"app_title": "Optimizador de tintes y cristal tintado",
+	"app_tagline": "Convierte tus tintes de Minecraft en el mayor número posible de colores de cristal tintado, con cantidades lo más parejas posible.",
+	"app_meta_description": "Planifica la forma matemáticamente óptima de fabricar tintes y cristal tintado de Minecraft con tu inventario.",
+	"app_footer": "Funciona por completo en tu navegador. Datos de recetas: {version}.",
+	"locale_label": "Idioma",
+	"locale_en": "English",
+	"locale_es": "Español",
+	"theme_toggle": "Cambiar modo oscuro",
+	"color_white": "Blanco",
+	"color_orange": "Naranja",
+	"color_magenta": "Magenta",
+	"color_light_blue": "Azul claro",
+	"color_yellow": "Amarillo",
+	"color_lime": "Verde lima",
+	"color_pink": "Rosa",
+	"color_gray": "Gris",
+	"color_light_gray": "Gris claro",
+	"color_cyan": "Cian",
+	"color_purple": "Morado",
+	"color_blue": "Azul",
+	"color_brown": "Marrón",
+	"color_green": "Verde",
+	"color_red": "Rojo",
+	"color_black": "Negro",
+	"dye_white": "Tinte blanco",
+	"dye_orange": "Tinte naranja",
+	"dye_magenta": "Tinte magenta",
+	"dye_light_blue": "Tinte azul claro",
+	"dye_yellow": "Tinte amarillo",
+	"dye_lime": "Tinte verde lima",
+	"dye_pink": "Tinte rosa",
+	"dye_gray": "Tinte gris",
+	"dye_light_gray": "Tinte gris claro",
+	"dye_cyan": "Tinte cian",
+	"dye_purple": "Tinte morado",
+	"dye_blue": "Tinte azul",
+	"dye_brown": "Tinte marrón",
+	"dye_green": "Tinte verde",
+	"dye_red": "Tinte rojo",
+	"dye_black": "Tinte negro",
+	"glass_white": "Cristal tintado de blanco",
+	"glass_orange": "Cristal tintado de naranja",
+	"glass_magenta": "Cristal tintado de magenta",
+	"glass_light_blue": "Cristal tintado de azul claro",
+	"glass_yellow": "Cristal tintado de amarillo",
+	"glass_lime": "Cristal tintado de verde lima",
+	"glass_pink": "Cristal tintado de rosa",
+	"glass_gray": "Cristal tintado de gris",
+	"glass_light_gray": "Cristal tintado de gris claro",
+	"glass_cyan": "Cristal tintado de cian",
+	"glass_purple": "Cristal tintado de morado",
+	"glass_blue": "Cristal tintado de azul",
+	"glass_brown": "Cristal tintado de marrón",
+	"glass_green": "Cristal tintado de verde",
+	"glass_red": "Cristal tintado de rojo",
+	"glass_black": "Cristal tintado de negro",
+	"resource_plain_glass": "Cristal sin tintar",
+	"unit_dye_units": [
+		{
+			"declarations": [
+				"input count",
+				"input countText",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{countText} unidad de tinte",
+				"countPlural=*": "{countText} unidades de tinte"
+			}
+		}
+	],
+	"unit_stained_glass_blocks": [
+		{
+			"declarations": [
+				"input count",
+				"input countText",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{countText} bloque de cristal tintado",
+				"countPlural=*": "{countText} bloques de cristal tintado"
+			}
+		}
+	],
+	"unit_plain_glass_blocks": [
+		{
+			"declarations": [
+				"input count",
+				"input countText",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{countText} bloque de cristal sin tintar",
+				"countPlural=*": "{countText} bloques de cristal sin tintar"
+			}
+		}
+	],
+	"unit_recipe_executions": [
+		{
+			"declarations": [
+				"input count",
+				"input countText",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{countText} ejecución de receta",
+				"countPlural=*": "{countText} ejecuciones de receta"
+			}
+		}
+	],
+	"unit_dye_of_color": [
+		{
+			"declarations": [
+				"input count",
+				"input countText",
+				"input dye",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{countText} {dye}",
+				"countPlural=*": "{countText} {dye}"
+			}
+		}
+	],
+	"stacks_exact": [
+		{
+			"declarations": [
+				"input stacks",
+				"input stacksText",
+				"local stacksPlural = stacks: plural"
+			],
+			"selectors": [
+				"stacksPlural"
+			],
+			"match": {
+				"stacksPlural=one": "{stacksText} pila",
+				"stacksPlural=*": "{stacksText} pilas"
+			}
+		}
+	],
+	"stacks_with_remainder": [
+		{
+			"declarations": [
+				"input stacks",
+				"input stacksText",
+				"input remainderText",
+				"local stacksPlural = stacks: plural"
+			],
+			"selectors": [
+				"stacksPlural"
+			],
+			"match": {
+				"stacksPlural=one": "{stacksText} pila + {remainderText}",
+				"stacksPlural=*": "{stacksText} pilas + {remainderText}"
+			}
+		}
+	],
+	"count_with_stacks": "{amount} · {stacks}",
+	"unit_short_dye": "unidades de tinte",
+	"unit_short_stained_glass": "bloques de cristal tintado",
+	"unit_short_plain_glass": "bloques de cristal sin tintar",
+	"unit_short_executions": "ejecuciones de receta",
+	"section_inventory": "Inventario inicial",
+	"section_inventory_description": "Las unidades de tinte y los bloques de cristal tintado que ya tienes.",
+	"section_options": "Opciones",
+	"section_craft": "Fabrica estos tintes",
+	"section_craft_description": "Ejecuciones de receta, en un orden en el que cada ingrediente está listo antes de necesitarlo.",
+	"section_glass": "Fabrica este cristal",
+	"section_glass_description": "Cada teñido de cristal usa 1 unidad de tinte y 8 bloques de cristal sin tintar, y da 8 bloques de cristal tintado.",
+	"section_final": "Inventario final",
+	"section_final_description": "Bloques de cristal tintado por color después del plan.",
+	"section_leftovers": "Tinte sobrante",
+	"section_leftovers_description": "Unidades de tinte que sobran después del plan.",
+	"section_bottleneck": "Cuello de botella",
+	"section_bottleneck_description": "¿Por qué no puedo conseguir más?",
+	"section_target": "Objetivo",
+	"inventory_dye_label": "Unidades de tinte",
+	"inventory_glass_label": "Bloques de cristal tintado",
+	"inventory_field_aria": "{color}: {field}",
+	"inventory_keyboard_hint": "Tab pasa de un campo a otro. ↑/↓ suman o restan 1, Mayús+↑/↓ suman o restan 64, Intro aplica.",
+	"stepper_increase": "Sumar 1 a {field}",
+	"stepper_decrease": "Restar 1 a {field}",
+	"stepper_zero": "Poner {field} a 0",
+	"input_error_empty": "Escribe un número, o 0 si no tienes.",
+	"input_error_negative": "Escribe 0 o más. No se admiten cantidades negativas.",
+	"input_error_integer": "Escribe un número entero, como 12. Los objetos no se pueden dividir.",
+	"input_error_too_large": "Escribe como máximo {max}.",
+	"input_error_minimum": "Escribe al menos {min}.",
+	"plain_glass_label": "Cristal sin tintar",
+	"plain_glass_unlimited": "Cristal sin tintar ilimitado",
+	"plain_glass_unlimited_hint": "Desactívalo para indicar cuántos bloques de cristal sin tintar tienes.",
+	"plain_glass_quantity": "Bloques de cristal sin tintar disponibles",
+	"mode_label": "Optimizar para",
+	"mode_balanced": "Equilibrado",
+	"mode_balanced_description": "Primero el mayor número de colores, luego las cantidades más parejas.",
+	"mode_maximum_output": "Máxima producción",
+	"mode_maximum_output_description": "El mayor número de bloques de cristal tintado, sin importar el equilibrio.",
+	"mode_target": "Objetivo",
+	"mode_target_description": "Alcanza una cantidad fija en los colores que elijas.",
+	"target_label": "Objetivo por color (bloques de cristal tintado)",
+	"target_colors_label": "Colores a los que se aplica el objetivo",
+	"target_select_all": "Seleccionar todos",
+	"target_select_none": "Quitar todos",
+	"target_error_no_colors": "Elige al menos un color.",
+	"action_load_sample": "Cargar ejemplo",
+	"action_reset": "Restablecer",
+	"action_export": "Exportar JSON",
+	"action_import": "Importar JSON",
+	"action_cancel": "Cancelar",
+	"action_close": "Cerrar",
+	"action_details": "Detalles",
+	"confirm_sample_title": "¿Sustituir tu inventario por el ejemplo?",
+	"confirm_sample_description": "Se sobrescribirán tus unidades de tinte, bloques de cristal tintado y el ajuste de cristal sin tintar.",
+	"confirm_sample_action": "Cargar ejemplo",
+	"confirm_reset_title": "¿Restablecer todo?",
+	"confirm_reset_description": "Todas las cantidades vuelven a 0 y las opciones vuelven a sus valores predeterminados.",
+	"confirm_reset_action": "Restablecer",
+	"toast_sample_loaded": "Inventario de ejemplo cargado.",
+	"toast_reset": "Inventario y opciones restablecidos.",
+	"toast_exported": "Inventario exportado.",
+	"toast_imported": "Inventario importado.",
+	"toast_import_failed": "No se pudo importar ese archivo. No se ha cambiado nada.",
+	"import_more_errors": [
+		{
+			"declarations": [
+				"input count",
+				"input countText",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "…y {countText} problema más.",
+				"countPlural=*": "…y {countText} problemas más."
+			}
+		}
+	],
+	"import_error_json": "El archivo no es un JSON válido.",
+	"import_error_shape": "El archivo no es una exportación del optimizador de tintes.",
+	"import_error_schema_version": "La versión de esquema {version} no es compatible (se esperaba {expected}).",
+	"import_error_recipe_version": "La versión de datos de recetas «{version}» no es compatible (se esperaba «{expected}»).",
+	"import_error_unknown_color": "Color desconocido «{color}» en {path}.",
+	"import_error_count": "{path} debe ser un número entero entre 0 y {max} (se encontró {value}).",
+	"import_error_missing": "Falta {path}.",
+	"import_error_invalid": "{path} tiene un valor no válido ({value}).",
+	"results_solving": "Optimizando…",
+	"results_stale": "Actualizando con tus últimos cambios…",
+	"results_error_title": "El optimizador no pudo obtener un resultado",
+	"results_error_validation": "La respuesta del solucionador no superó las comprobaciones de números enteros, así que no se muestra. Cambia el inventario o vuelve a intentarlo.",
+	"results_error_solver": "El solucionador se detuvo inesperadamente: {message}",
+	"results_error_load": "No se pudo cargar el solucionador. Comprueba tu conexión y recarga la página.",
+	"results_invalid_input": "Corrige los campos marcados para ver un resultado.",
+	"results_empty_title": "Todavía no hay nada que optimizar",
+	"results_empty_description": "Escribe tus unidades de tinte o bloques de cristal tintado, o carga el inventario de ejemplo.",
+	"results_retry": "Reintentar",
+	"headline_colors": "{achieved} / {total} colores",
+	"headline_label": "Resumen del resultado",
+	"metric_colors": "Colores",
+	"metric_balance_floor": "Nivel mínimo",
+	"metric_balance_floor_hint": "Menor cantidad final entre tus colores",
+	"metric_largest": "Cantidad máxima",
+	"metric_spread": "Diferencia",
+	"metric_spread_hint": "Cantidad máxima menos el nivel mínimo",
+	"metric_new_glass": "Bloques de cristal tintado nuevos",
+	"metric_total_glass": "Total de bloques de cristal tintado",
+	"metric_plain_glass": "Cristal sin tintar necesario",
+	"metric_dye_used": "Unidades de tinte en cristal",
+	"metric_not_applicable": "n/d",
+	"table_color": "Color",
+	"table_existing": "Cristal existente",
+	"table_dye_on_glass": "Tinte en cristal",
+	"table_new": "Cristal nuevo",
+	"table_final": "Cristal final",
+	"table_stacks": "Pilas + resto",
+	"table_total": "Total",
+	"table_hide_empty": "Solo se muestran los colores del inventario final.",
+	"plan_recipe_step": "{executions}× {recipe}",
+	"plan_recipe_io": "{inputs} → {outputs}",
+	"plan_list_separator": " + ",
+	"plan_glass_step": "Usa {dye} en {plainGlass} → {result}",
+	"plan_no_recipes": "No hace falta fabricar tintes: todos los colores se tiñen con tinte que ya tienes.",
+	"plan_no_glass": "Este plan no tiñe cristal.",
+	"plan_total_executions": "Total: {executions}",
+	"recipe_dialog_per_execution": "Cada ejecución de receta",
+	"recipe_dialog_total": "Todas las ejecuciones juntas",
+	"recipe_dialog_source": "Verificada con el archivo de receta del juego",
+	"recipe_dialog_recipe_version": "Datos de recetas: {version}",
+	"recipe_dialog_open": "Ver detalles de la receta {recipe}",
+	"recipe_cyan_dye": "Tinte cian (azul + verde)",
+	"recipe_gray_dye": "Tinte gris (negro + blanco)",
+	"recipe_light_blue_dye_from_blue_white_dye": "Tinte azul claro (azul + blanco)",
+	"recipe_light_gray_dye_from_black_white_dye": "Tinte gris claro (negro + 2 blanco)",
+	"recipe_light_gray_dye_from_gray_white_dye": "Tinte gris claro (gris + blanco)",
+	"recipe_lime_dye": "Tinte verde lima (verde + blanco)",
+	"recipe_magenta_dye_from_blue_red_pink": "Tinte magenta (azul + rojo + rosa)",
+	"recipe_magenta_dye_from_blue_red_white_dye": "Tinte magenta (azul + 2 rojo + blanco)",
+	"recipe_magenta_dye_from_purple_and_pink": "Tinte magenta (morado + rosa)",
+	"recipe_orange_dye_from_red_yellow": "Tinte naranja (rojo + amarillo)",
+	"recipe_pink_dye_from_red_white_dye": "Tinte rosa (rojo + blanco)",
+	"recipe_purple_dye": "Tinte morado (azul + rojo)",
+	"leftovers_none": "No sobra tinte.",
+	"leftovers_why": "¿Por qué sobra tinte?",
+	"leftovers_dialog_title": "Por qué el plan deja tinte sin usar",
+	"leftovers_intro_balanced": "Que sobre mucho tinte puede ser intencionado. El modo Equilibrado solo gasta tinte cuando mantiene tus colores parejos: gastar cientos de unidades de tinte extra en un color lo dispararía y rompería el equilibrio.",
+	"leftovers_intro_maximum": "Máxima producción gasta todas las unidades de tinte que puede. Lo que sobra no se pudo usar, normalmente porque se acabó el cristal sin tintar.",
+	"leftovers_intro_target": "El modo Objetivo solo gasta el tinte que necesitan tus objetivos, así que el resto se queda en tu inventario.",
+	"leftovers_note_spread": "{dye}: una unidad de tinte más en cristal daría {next} en lugar de {current}, por encima de la cantidad máxima ({largest}), así que la diferencia crecería.",
+	"leftovers_note_other": "{dye}: usarlo no añadiría un color, no subiría el nivel mínimo ni reduciría la diferencia.",
+	"bottleneck_none": "Primero añade unidades de tinte o bloques de cristal tintado.",
+	"bottleneck_unique_heading": "Recurso limitante",
+	"bottleneck_heading": "Un aumento mínimo de recursos que mejoraría el resultado",
+	"bottleneck_available": "{amount} disponibles",
+	"bottleneck_required": "{amount} necesarias para subir todos los colores por encima del nivel mínimo actual",
+	"bottleneck_short": "Te faltan {amount}.",
+	"bottleneck_unique": "Es el único aumento mínimo (comprobado resolviendo de nuevo sin él).",
+	"bottleneck_not_unique": "No es la única opción. Estas funcionan igual de bien:",
+	"bottleneck_next_floor": "Con él, el nivel mínimo podría subir de {current} a al menos {next}.",
+	"bottleneck_show_math": "Ver los cálculos",
+	"bottleneck_dialog_title": "Por qué el nivel mínimo se queda en {floor}",
+	"bottleneck_dialog_intro": "Para subir el nivel mínimo, cada color de tu inventario final necesita al menos {next} bloques. El cristal sale de 8 en 8 bloques por unidad de tinte (S = E + 8·G), así que el siguiente valor alcanzable de un color puede estar bastante por encima de {next}.",
+	"bottleneck_level_line": "{color}: {current} ahora → {next} después, necesita {dye} en cristal",
+	"bottleneck_dialog_conclusion": "Con tu inventario actual ese siguiente nivel no es alcanzable. Los recursos iniciales extra más pequeños que lo hacen posible son:",
+	"bottleneck_increase_line": "+{extra} {resource} ({available} → {required})",
+	"unreachable_title": "Colores que no puedes fabricar",
+	"unreachable_description": "No tienes unidades de tinte ni bloques de cristal tintado de estos colores, y ninguna receta puede fabricar el tinte con lo que tienes.",
+	"unreachable_recipe_missing": "{recipe} necesita {missing}.",
+	"unreachable_no_recipe": "Ninguna receta de mezcla de tintes lo fabrica.",
+	"target_met_title": "En el objetivo",
+	"target_unmet_title": "Por debajo del objetivo",
+	"target_all_met": "Todos los colores elegidos llegan a {target}.",
+	"target_unmet_unreachable": "{color}: no tienes y ninguna receta puede fabricarlo con lo que tienes.",
+	"target_unmet_short": "{color}: {current}, faltan {shortfall}. Tus recursos se acaban antes de llegar.",
+	"target_increase_heading": "Un aumento mínimo de recursos que cumpliría todos los objetivos"
 }
