@@ -59,14 +59,8 @@
 	"resource_plain_glass": "Plain Glass",
 	"unit_dye_units": [
 		{
-			"declarations": [
-				"input count",
-				"input countText",
-				"local countPlural = count: plural"
-			],
-			"selectors": [
-				"countPlural"
-			],
+			"declarations": ["input count", "input countText", "local countPlural = count: plural"],
+			"selectors": ["countPlural"],
 			"match": {
 				"countPlural=one": "{countText} dye unit",
 				"countPlural=*": "{countText} dye units"
@@ -75,14 +69,8 @@
 	],
 	"unit_stained_glass_blocks": [
 		{
-			"declarations": [
-				"input count",
-				"input countText",
-				"local countPlural = count: plural"
-			],
-			"selectors": [
-				"countPlural"
-			],
+			"declarations": ["input count", "input countText", "local countPlural = count: plural"],
+			"selectors": ["countPlural"],
 			"match": {
 				"countPlural=one": "{countText} stained-glass block",
 				"countPlural=*": "{countText} stained-glass blocks"
@@ -91,14 +79,8 @@
 	],
 	"unit_plain_glass_blocks": [
 		{
-			"declarations": [
-				"input count",
-				"input countText",
-				"local countPlural = count: plural"
-			],
-			"selectors": [
-				"countPlural"
-			],
+			"declarations": ["input count", "input countText", "local countPlural = count: plural"],
+			"selectors": ["countPlural"],
 			"match": {
 				"countPlural=one": "{countText} plain glass block",
 				"countPlural=*": "{countText} plain glass blocks"
@@ -107,14 +89,8 @@
 	],
 	"unit_recipe_executions": [
 		{
-			"declarations": [
-				"input count",
-				"input countText",
-				"local countPlural = count: plural"
-			],
-			"selectors": [
-				"countPlural"
-			],
+			"declarations": ["input count", "input countText", "local countPlural = count: plural"],
+			"selectors": ["countPlural"],
 			"match": {
 				"countPlural=one": "{countText} recipe execution",
 				"countPlural=*": "{countText} recipe executions"
@@ -129,9 +105,7 @@
 				"input dye",
 				"local countPlural = count: plural"
 			],
-			"selectors": [
-				"countPlural"
-			],
+			"selectors": ["countPlural"],
 			"match": {
 				"countPlural=one": "{countText} {dye}",
 				"countPlural=*": "{countText} {dye}"
@@ -140,14 +114,8 @@
 	],
 	"stacks_exact": [
 		{
-			"declarations": [
-				"input stacks",
-				"input stacksText",
-				"local stacksPlural = stacks: plural"
-			],
-			"selectors": [
-				"stacksPlural"
-			],
+			"declarations": ["input stacks", "input stacksText", "local stacksPlural = stacks: plural"],
+			"selectors": ["stacksPlural"],
 			"match": {
 				"stacksPlural=one": "{stacksText} stack",
 				"stacksPlural=*": "{stacksText} stacks"
@@ -162,9 +130,7 @@
 				"input remainderText",
 				"local stacksPlural = stacks: plural"
 			],
-			"selectors": [
-				"stacksPlural"
-			],
+			"selectors": ["stacksPlural"],
 			"match": {
 				"stacksPlural=one": "{stacksText} stack + {remainderText}",
 				"stacksPlural=*": "{stacksText} stacks + {remainderText}"
@@ -172,10 +138,6 @@
 		}
 	],
 	"count_with_stacks": "{amount} · {stacks}",
-	"unit_short_dye": "dye units",
-	"unit_short_stained_glass": "stained-glass blocks",
-	"unit_short_plain_glass": "plain glass blocks",
-	"unit_short_executions": "recipe executions",
 	"section_inventory": "Starting Inventory",
 	"section_inventory_description": "The dye units and stained-glass blocks you already have.",
 	"section_options": "Options",
@@ -238,14 +200,8 @@
 	"toast_import_failed": "Couldn’t import that file. Nothing was changed.",
 	"import_more_errors": [
 		{
-			"declarations": [
-				"input count",
-				"input countText",
-				"local countPlural = count: plural"
-			],
-			"selectors": [
-				"countPlural"
-			],
+			"declarations": ["input count", "input countText", "local countPlural = count: plural"],
+			"selectors": ["countPlural"],
 			"match": {
 				"countPlural=one": "…and {countText} more problem.",
 				"countPlural=*": "…and {countText} more problems."
@@ -272,7 +228,6 @@
 	"results_retry": "Try again",
 	"headline_colors": "{achieved} / {total} colors",
 	"headline_label": "Result summary",
-	"metric_colors": "Colors",
 	"metric_balance_floor": "Balance floor",
 	"metric_balance_floor_hint": "Smallest final count among your colors",
 	"metric_largest": "Largest count",
@@ -282,6 +237,7 @@
 	"metric_total_glass": "Total stained-glass blocks",
 	"metric_plain_glass": "Plain glass needed",
 	"metric_dye_used": "Dye units on glass",
+	"metric_executions": "Recipe executions",
 	"metric_not_applicable": "n/a",
 	"table_color": "Color",
 	"table_existing": "Existing glass",
@@ -324,18 +280,27 @@
 	"leftovers_note_spread": "{dye}: one more dye unit on glass would give {next} instead of {current}, above the largest count ({largest}), so the spread would grow.",
 	"leftovers_note_other": "{dye}: using it wouldn’t add a color, raise the balance floor or reduce the spread.",
 	"bottleneck_none": "Add some dye units or stained-glass blocks first.",
-	"bottleneck_unique_heading": "Limiting resource",
+	"bottleneck_unique_heading": "Limiting resource: {resource}",
 	"bottleneck_heading": "One smallest resource increase that would improve the result",
 	"bottleneck_available": "{amount} available",
 	"bottleneck_required": "{amount} required to raise every color above the current balance floor",
-	"bottleneck_short": "You are {amount} short.",
+	"bottleneck_short": [
+		{
+			"declarations": ["input count", "input amount", "local countPlural = count: plural"],
+			"selectors": ["countPlural"],
+			"match": {
+				"countPlural=one": "You are {amount} short.",
+				"countPlural=*": "You are {amount} short."
+			}
+		}
+	],
 	"bottleneck_unique": "This is the only smallest increase (proven by re-solving without it).",
 	"bottleneck_not_unique": "It isn’t the only option. These work just as well:",
 	"bottleneck_next_floor": "With it, the balance floor could rise from {current} to at least {next}.",
 	"bottleneck_show_math": "Show the math",
 	"bottleneck_dialog_title": "Why the balance floor stops at {floor}",
 	"bottleneck_dialog_intro": "To raise the balance floor, every color in your final inventory needs at least {next} blocks. Glass comes 8 blocks per dye unit (S = E + 8·G), so a color’s next reachable count can be well above {next}.",
-	"bottleneck_level_line": "{color}: {current} now → {next} next, needs {dye} on glass",
+	"bottleneck_level_line": "{current} now → {next} next, needs {dye} on glass",
 	"bottleneck_dialog_conclusion": "With your current inventory that next level is infeasible. The smallest extra starting resources that make it feasible are:",
 	"bottleneck_increase_line": "+{extra} {resource} ({available} → {required})",
 	"unreachable_title": "Colors you can’t make",
@@ -347,5 +312,6 @@
 	"target_all_met": "Every requested color reaches {target}.",
 	"target_unmet_unreachable": "{color}: you have none and no recipe can make it from what you have.",
 	"target_unmet_short": "{color}: {current}, {shortfall} short. Your resources run out before it gets there.",
+	"target_required": "{amount} required to meet every target",
 	"target_increase_heading": "One smallest resource increase that would meet every target"
 }

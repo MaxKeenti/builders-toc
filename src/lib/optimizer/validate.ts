@@ -23,11 +23,7 @@ export class ProblemError extends Error {
 }
 
 export type PlanErrorCode =
-	| 'non-integer'
-	| 'negative'
-	| 'negative-dye'
-	| 'plain-glass-exceeded'
-	| 'stage-mismatch';
+	'non-integer' | 'negative' | 'negative-dye' | 'plain-glass-exceeded' | 'stage-mismatch';
 
 /** A solver result that failed independent integer validation. Never shown as a result. */
 export class PlanValidationError extends Error {
@@ -51,7 +47,8 @@ export function assertValidRecipes(recipes: RecipeSet): void {
 		ids.add(r.id);
 		for (const side of [r.inputs, r.outputs]) {
 			const entries = Object.entries(side);
-			if (entries.length === 0) throw new ProblemError('invalid-recipe', `${r.id} has an empty side`);
+			if (entries.length === 0)
+				throw new ProblemError('invalid-recipe', `${r.id} has an empty side`);
 			for (const [item, q] of entries) {
 				if (!isColorId(item) || !Number.isSafeInteger(q) || (q as number) <= 0) {
 					throw new ProblemError('invalid-recipe', `${r.id}: ${item} × ${q}`);

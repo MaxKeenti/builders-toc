@@ -90,7 +90,11 @@ describe('recipes', () => {
 
 	it('picks the better light gray recipe for the inventory', () => {
 		const r = solve(
-			problem({ black: 1, white: 2 }, {}, { mode: 'target', target: 24, targetColors: ['light_gray'] })
+			problem(
+				{ black: 1, white: 2 },
+				{},
+				{ mode: 'target', target: 24, targetColors: ['light_gray'] }
+			)
 		);
 		expect(r.target?.met).toEqual(['light_gray']);
 		expect(r.plan.recipes.map((s) => s.recipeId)).toEqual(['light_gray_dye_from_black_white_dye']);
@@ -98,14 +102,21 @@ describe('recipes', () => {
 
 	it('picks the better magenta recipe for the inventory', () => {
 		const r = solve(
-			problem({ blue: 1, red: 1, pink: 1 }, {}, { mode: 'target', target: 24, targetColors: ['magenta'] })
+			problem(
+				{ blue: 1, red: 1, pink: 1 },
+				{},
+				{ mode: 'target', target: 24, targetColors: ['magenta'] }
+			)
 		);
 		expect(r.target?.met).toEqual(['magenta']);
 		expect(r.plan.recipes.map((s) => s.recipeId)).toEqual(['magenta_dye_from_blue_red_pink']);
 	});
 
 	it('never needs optimizer changes to use a different recipe set', () => {
-		const onlyPurple = { ...RECIPE_SET, dyeRecipes: RECIPE_SET.dyeRecipes.filter((r) => r.id === 'purple_dye') };
+		const onlyPurple = {
+			...RECIPE_SET,
+			dyeRecipes: RECIPE_SET.dyeRecipes.filter((r) => r.id === 'purple_dye')
+		};
 		const r = solve(problem({ blue: 1, red: 1 }, {}, {}, onlyPurple));
 		expect(r.summary.variety).toBe(2);
 	});
@@ -187,7 +198,11 @@ describe('modes', () => {
 
 	it('Maximum output is capped by finite plain glass', () => {
 		const r = solve(
-			problem({ white: 100 }, {}, { mode: 'maximum-output', plainGlass: { kind: 'finite', quantity: 83 } })
+			problem(
+				{ white: 100 },
+				{},
+				{ mode: 'maximum-output', plainGlass: { kind: 'finite', quantity: 83 } }
+			)
 		);
 		expect(r.summary.newGlass).toBe(80);
 	});
@@ -201,7 +216,9 @@ describe('modes', () => {
 			})
 		);
 		expect(r.target?.met).toEqual(['white', 'blue']);
-		expect(r.target?.unmet).toEqual([{ color: 'lime', finalGlass: 0, shortfall: 64, reachable: false }]);
+		expect(r.target?.unmet).toEqual([
+			{ color: 'lime', finalGlass: 0, shortfall: 64, reachable: false }
+		]);
 		// 4 Green Dye + 4 White Dye → 8 Lime Dye → 64 blocks; basic Green beats 8 craftable Lime.
 		expect(r.target?.increase?.increases).toEqual([
 			{ resource: 'green', available: 0, required: 4, extra: 4 }

@@ -133,7 +133,9 @@ export function smallestIncrease(
 	const craftable = craftableColors(problem.recipes.dyeRecipes);
 	lex.minimize(
 		'craftable',
-		linear(Object.fromEntries(COLOR_IDS.filter((c) => craftable.has(c)).map((c) => [dyeVars[c], 1])))
+		linear(
+			Object.fromEntries(COLOR_IDS.filter((c) => craftable.has(c)).map((c) => [dyeVars[c], 1]))
+		)
 	);
 	lex.fixInOrder(vars.map((v) => v.name));
 

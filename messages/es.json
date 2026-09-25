@@ -59,14 +59,8 @@
 	"resource_plain_glass": "Cristal sin tintar",
 	"unit_dye_units": [
 		{
-			"declarations": [
-				"input count",
-				"input countText",
-				"local countPlural = count: plural"
-			],
-			"selectors": [
-				"countPlural"
-			],
+			"declarations": ["input count", "input countText", "local countPlural = count: plural"],
+			"selectors": ["countPlural"],
 			"match": {
 				"countPlural=one": "{countText} unidad de tinte",
 				"countPlural=*": "{countText} unidades de tinte"
@@ -75,14 +69,8 @@
 	],
 	"unit_stained_glass_blocks": [
 		{
-			"declarations": [
-				"input count",
-				"input countText",
-				"local countPlural = count: plural"
-			],
-			"selectors": [
-				"countPlural"
-			],
+			"declarations": ["input count", "input countText", "local countPlural = count: plural"],
+			"selectors": ["countPlural"],
 			"match": {
 				"countPlural=one": "{countText} bloque de cristal tintado",
 				"countPlural=*": "{countText} bloques de cristal tintado"
@@ -91,14 +79,8 @@
 	],
 	"unit_plain_glass_blocks": [
 		{
-			"declarations": [
-				"input count",
-				"input countText",
-				"local countPlural = count: plural"
-			],
-			"selectors": [
-				"countPlural"
-			],
+			"declarations": ["input count", "input countText", "local countPlural = count: plural"],
+			"selectors": ["countPlural"],
 			"match": {
 				"countPlural=one": "{countText} bloque de cristal sin tintar",
 				"countPlural=*": "{countText} bloques de cristal sin tintar"
@@ -107,14 +89,8 @@
 	],
 	"unit_recipe_executions": [
 		{
-			"declarations": [
-				"input count",
-				"input countText",
-				"local countPlural = count: plural"
-			],
-			"selectors": [
-				"countPlural"
-			],
+			"declarations": ["input count", "input countText", "local countPlural = count: plural"],
+			"selectors": ["countPlural"],
 			"match": {
 				"countPlural=one": "{countText} ejecución de receta",
 				"countPlural=*": "{countText} ejecuciones de receta"
@@ -129,9 +105,7 @@
 				"input dye",
 				"local countPlural = count: plural"
 			],
-			"selectors": [
-				"countPlural"
-			],
+			"selectors": ["countPlural"],
 			"match": {
 				"countPlural=one": "{countText} {dye}",
 				"countPlural=*": "{countText} {dye}"
@@ -140,14 +114,8 @@
 	],
 	"stacks_exact": [
 		{
-			"declarations": [
-				"input stacks",
-				"input stacksText",
-				"local stacksPlural = stacks: plural"
-			],
-			"selectors": [
-				"stacksPlural"
-			],
+			"declarations": ["input stacks", "input stacksText", "local stacksPlural = stacks: plural"],
+			"selectors": ["stacksPlural"],
 			"match": {
 				"stacksPlural=one": "{stacksText} pila",
 				"stacksPlural=*": "{stacksText} pilas"
@@ -162,9 +130,7 @@
 				"input remainderText",
 				"local stacksPlural = stacks: plural"
 			],
-			"selectors": [
-				"stacksPlural"
-			],
+			"selectors": ["stacksPlural"],
 			"match": {
 				"stacksPlural=one": "{stacksText} pila + {remainderText}",
 				"stacksPlural=*": "{stacksText} pilas + {remainderText}"
@@ -172,10 +138,6 @@
 		}
 	],
 	"count_with_stacks": "{amount} · {stacks}",
-	"unit_short_dye": "unidades de tinte",
-	"unit_short_stained_glass": "bloques de cristal tintado",
-	"unit_short_plain_glass": "bloques de cristal sin tintar",
-	"unit_short_executions": "ejecuciones de receta",
 	"section_inventory": "Inventario inicial",
 	"section_inventory_description": "Las unidades de tinte y los bloques de cristal tintado que ya tienes.",
 	"section_options": "Opciones",
@@ -238,14 +200,8 @@
 	"toast_import_failed": "No se pudo importar ese archivo. No se ha cambiado nada.",
 	"import_more_errors": [
 		{
-			"declarations": [
-				"input count",
-				"input countText",
-				"local countPlural = count: plural"
-			],
-			"selectors": [
-				"countPlural"
-			],
+			"declarations": ["input count", "input countText", "local countPlural = count: plural"],
+			"selectors": ["countPlural"],
 			"match": {
 				"countPlural=one": "…y {countText} problema más.",
 				"countPlural=*": "…y {countText} problemas más."
@@ -272,7 +228,6 @@
 	"results_retry": "Reintentar",
 	"headline_colors": "{achieved} / {total} colores",
 	"headline_label": "Resumen del resultado",
-	"metric_colors": "Colores",
 	"metric_balance_floor": "Nivel mínimo",
 	"metric_balance_floor_hint": "Menor cantidad final entre tus colores",
 	"metric_largest": "Cantidad máxima",
@@ -282,6 +237,7 @@
 	"metric_total_glass": "Total de bloques de cristal tintado",
 	"metric_plain_glass": "Cristal sin tintar necesario",
 	"metric_dye_used": "Unidades de tinte en cristal",
+	"metric_executions": "Ejecuciones de receta",
 	"metric_not_applicable": "n/d",
 	"table_color": "Color",
 	"table_existing": "Cristal existente",
@@ -324,18 +280,27 @@
 	"leftovers_note_spread": "{dye}: una unidad de tinte más en cristal daría {next} en lugar de {current}, por encima de la cantidad máxima ({largest}), así que la diferencia crecería.",
 	"leftovers_note_other": "{dye}: usarlo no añadiría un color, no subiría el nivel mínimo ni reduciría la diferencia.",
 	"bottleneck_none": "Primero añade unidades de tinte o bloques de cristal tintado.",
-	"bottleneck_unique_heading": "Recurso limitante",
+	"bottleneck_unique_heading": "Recurso limitante: {resource}",
 	"bottleneck_heading": "Un aumento mínimo de recursos que mejoraría el resultado",
-	"bottleneck_available": "{amount} disponibles",
-	"bottleneck_required": "{amount} necesarias para subir todos los colores por encima del nivel mínimo actual",
-	"bottleneck_short": "Te faltan {amount}.",
+	"bottleneck_available": "Tienes {amount}",
+	"bottleneck_required": "Hacen falta {amount} para subir todos los colores por encima del nivel mínimo actual",
+	"bottleneck_short": [
+		{
+			"declarations": ["input count", "input amount", "local countPlural = count: plural"],
+			"selectors": ["countPlural"],
+			"match": {
+				"countPlural=one": "Te falta {amount}.",
+				"countPlural=*": "Te faltan {amount}."
+			}
+		}
+	],
 	"bottleneck_unique": "Es el único aumento mínimo (comprobado resolviendo de nuevo sin él).",
 	"bottleneck_not_unique": "No es la única opción. Estas funcionan igual de bien:",
 	"bottleneck_next_floor": "Con él, el nivel mínimo podría subir de {current} a al menos {next}.",
 	"bottleneck_show_math": "Ver los cálculos",
 	"bottleneck_dialog_title": "Por qué el nivel mínimo se queda en {floor}",
 	"bottleneck_dialog_intro": "Para subir el nivel mínimo, cada color de tu inventario final necesita al menos {next} bloques. El cristal sale de 8 en 8 bloques por unidad de tinte (S = E + 8·G), así que el siguiente valor alcanzable de un color puede estar bastante por encima de {next}.",
-	"bottleneck_level_line": "{color}: {current} ahora → {next} después, necesita {dye} en cristal",
+	"bottleneck_level_line": "{current} ahora → {next} después, necesita {dye} en cristal",
 	"bottleneck_dialog_conclusion": "Con tu inventario actual ese siguiente nivel no es alcanzable. Los recursos iniciales extra más pequeños que lo hacen posible son:",
 	"bottleneck_increase_line": "+{extra} {resource} ({available} → {required})",
 	"unreachable_title": "Colores que no puedes fabricar",
@@ -347,5 +312,6 @@
 	"target_all_met": "Todos los colores elegidos llegan a {target}.",
 	"target_unmet_unreachable": "{color}: no tienes y ninguna receta puede fabricarlo con lo que tienes.",
 	"target_unmet_short": "{color}: {current}, faltan {shortfall}. Tus recursos se acaban antes de llegar.",
+	"target_required": "Hacen falta {amount} para cumplir todos los objetivos",
 	"target_increase_heading": "Un aumento mínimo de recursos que cumpliría todos los objetivos"
 }

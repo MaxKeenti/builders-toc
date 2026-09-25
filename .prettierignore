@@ -8,6 +8,7 @@ bun.lockb
 # Miscellaneous
 /static/
 
-# Generated: shadcn-svelte CLI output and inlang project metadata
+# Generated: shadcn-svelte CLI output, inlang project metadata and MCP client config
+/.mcp.json
 /src/lib/components/ui/
 /project.inlang/

@@ -54,9 +54,7 @@ export class OptimizerClient {
 			};
 			worker.onerror = (event) => {
 				for (const { reject } of this.#pending.values()) {
-					reject(
-						new OptimizerError({ name: 'WorkerError', code: null, message: event.message })
-					);
+					reject(new OptimizerError({ name: 'WorkerError', code: null, message: event.message }));
 				}
 				this.#pending.clear();
 				this.#worker = null;

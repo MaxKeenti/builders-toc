@@ -51,7 +51,10 @@ export function assertPlanInvariants(p: OptimizeProblem, r: OptimizeResult): voi
 	for (const o of r.colors) {
 		const c = o.color as ColorId;
 		if (o.leftoverDye !== dye[c]) throw new Error(`leftover mismatch for ${c}`);
-		if (o.finalGlass !== p.inventory.stainedGlass[c] + (o.dyeOnGlass / glass.dyeUnits) * glass.stainedGlassBlocks) {
+		if (
+			o.finalGlass !==
+			p.inventory.stainedGlass[c] + (o.dyeOnGlass / glass.dyeUnits) * glass.stainedGlassBlocks
+		) {
 			throw new Error(`S != E + 8G for ${c}`);
 		}
 		for (const v of Object.values(o)) {
@@ -67,5 +70,7 @@ export function assertPlanInvariants(p: OptimizeProblem, r: OptimizeResult): voi
 }
 
 export function finalCounts(r: OptimizeResult): Partial<Record<ColorId, number>> {
-	return Object.fromEntries(r.colors.filter((o) => o.finalGlass > 0).map((o) => [o.color, o.finalGlass]));
+	return Object.fromEntries(
+		r.colors.filter((o) => o.finalGlass > 0).map((o) => [o.color, o.finalGlass])
+	);
 }

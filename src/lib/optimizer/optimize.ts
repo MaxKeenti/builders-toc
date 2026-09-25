@@ -46,7 +46,12 @@ export function optimize(problem: OptimizeProblem, solver: MilpSolver): Optimize
 				'>=',
 				0
 			);
-			f.model.addConstraint(`shortfall_${c}`, sum(f.finalGlass(c), linear({ [s]: 1 })), '>=', options.target);
+			f.model.addConstraint(
+				`shortfall_${c}`,
+				sum(f.finalGlass(c), linear({ [s]: 1 })),
+				'>=',
+				options.target
+			);
 			met.push(linear({ [y]: 1 }));
 			shortfall.push(linear({ [s]: 1 }));
 		}
@@ -148,12 +153,7 @@ function addBalanceVars(f: Formulation, bigM: number): BalanceVars {
 		const z = model.addVar(`z_${c}`, 'binary');
 		const s = f.finalGlass(c);
 		model.addConstraint(`select_${c}`, sum(linear({ [z]: 1 }), scale(s, -1)), '<=', 0);
-		model.addConstraint(
-			`floor_${c}`,
-			sum(s, linear({ [floor]: -1, [z]: -bigM })),
-			'>=',
-			-bigM
-		);
+		model.addConstraint(`floor_${c}`, sum(s, linear({ [floor]: -1, [z]: -bigM })), '>=', -bigM);
 		model.addConstraint(`largest_${c}`, sum(linear({ [largest]: 1 }), scale(s, -1)), '>=', 0);
 		variety.push(linear({ [z]: 1 }));
 	}
@@ -188,8 +188,7 @@ function summarize(colors: ColorOutcome[], plan: CraftingPlan, executions: numbe
 	const present = colors.filter((o) => o.finalGlass > 0).map((o) => o.finalGlass);
 	const floor = present.length > 0 ? Math.min(...present) : null;
 	const largest = present.length > 0 ? Math.max(...present) : null;
-	const total = (key: keyof ColorOutcome) =>
-		colors.reduce((acc, o) => acc + (o[key] as number), 0);
+	const total = (key: keyof ColorOutcome) => colors.reduce((acc, o) => acc + (o[key] as number), 0);
 	return {
 		variety: present.length,
 		colorCount: COLOR_IDS.length,

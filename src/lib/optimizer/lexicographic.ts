@@ -73,7 +73,10 @@ export class Lexicographic {
 		for (const name of variables) {
 			let value = this.values[name];
 			if (value !== 0) {
-				value = this.stage(`min_${name}`, { direction: 'minimize', expr: { terms: { [name]: 1 }, constant: 0 } });
+				value = this.stage(`min_${name}`, {
+					direction: 'minimize',
+					expr: { terms: { [name]: 1 }, constant: 0 }
+				});
 			}
 			this.model.setBounds(name, value, value);
 		}

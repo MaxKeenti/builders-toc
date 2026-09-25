@@ -76,9 +76,7 @@ export function buildFormulation(
 	for (const c of COLOR_IDS) model.addConstraint(`leftover_${c}`, leftover(c), '>=', 0);
 
 	if (options.plainGlass.kind === 'finite') {
-		const used = linear(
-			Object.fromEntries(COLOR_IDS.map((c) => [glassVars[c], glass.plainGlass]))
-		);
+		const used = linear(Object.fromEntries(COLOR_IDS.map((c) => [glassVars[c], glass.plainGlass])));
 		const available = extraGlassVar
 			? linear({ [extraGlassVar]: glass.plainGlass }, options.plainGlass.quantity)
 			: linear({}, options.plainGlass.quantity);
